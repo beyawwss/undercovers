@@ -1,0 +1,1102 @@
+[
+  {
+    "civ": "Nasi Goreng",
+    "uc": "Mie Goreng"
+  },
+  {
+    "civ": "Kopi",
+    "uc": "Teh"
+  },
+  {
+    "civ": "Sate",
+    "uc": "Bakso"
+  },
+  {
+    "civ": "Es Krim",
+    "uc": "Gelato"
+  },
+  {
+    "civ": "Roti",
+    "uc": "Kue"
+  },
+  {
+    "civ": "Jeruk",
+    "uc": "Lemon"
+  },
+  {
+    "civ": "Apel",
+    "uc": "Pir"
+  },
+  {
+    "civ": "Semangka",
+    "uc": "Melon"
+  },
+  {
+    "civ": "Ayam Goreng",
+    "uc": "Bebek Goreng"
+  },
+  {
+    "civ": "Susu",
+    "uc": "Cokelat Panas"
+  },
+  {
+    "civ": "Mie Ayam",
+    "uc": "Soto Ayam"
+  },
+  {
+    "civ": "Mangga",
+    "uc": "Pisang"
+  },
+  {
+    "civ": "Anggur",
+    "uc": "Stroberi"
+  },
+  {
+    "civ": "Nanas",
+    "uc": "Pepaya"
+  },
+  {
+    "civ": "Durian",
+    "uc": "Nangka"
+  },
+  {
+    "civ": "Air Putih",
+    "uc": "Es Teh"
+  },
+  {
+    "civ": "Sirup",
+    "uc": "Jus Buah"
+  },
+  {
+    "civ": "Biskuit",
+    "uc": "Wafer"
+  },
+  {
+    "civ": "Keju",
+    "uc": "Mentega"
+  },
+  {
+    "civ": "Sambal",
+    "uc": "Kecap"
+  },
+  {
+    "civ": "Garam",
+    "uc": "Gula"
+  },
+  {
+    "civ": "Permen",
+    "uc": "Cokelat Batang"
+  },
+  {
+    "civ": "Es Serut",
+    "uc": "Es Krim"
+  },
+  {
+    "civ": "Tahu",
+    "uc": "Tempe"
+  },
+  {
+    "civ": "Telur Ceplok",
+    "uc": "Telur Dadar"
+  },
+  {
+    "civ": "Ikan Bakar",
+    "uc": "Udang Goreng"
+  },
+  {
+    "civ": "Kepiting",
+    "uc": "Cumi-cumi"
+  },
+  {
+    "civ": "Kerupuk",
+    "uc": "Keripik"
+  },
+  {
+    "civ": "Martabak",
+    "uc": "Terang Bulan"
+  },
+  {
+    "civ": "Pizza",
+    "uc": "Burger"
+  },
+  {
+    "civ": "Sosis",
+    "uc": "Nugget"
+  },
+  {
+    "civ": "Cireng",
+    "uc": "Cilok"
+  },
+  {
+    "civ": "Seblak",
+    "uc": "Makaroni Pedas"
+  },
+  {
+    "civ": "Tongseng",
+    "uc": "Gulai"
+  },
+  {
+    "civ": "Rawon",
+    "uc": "Soto Daging"
+  },
+  {
+    "civ": "Ketoprak",
+    "uc": "Gado-gado"
+  },
+  {
+    "civ": "Pempek",
+    "uc": "Siomay"
+  },
+  {
+    "civ": "Batagor",
+    "uc": "Cilok"
+  },
+  {
+    "civ": "Lontong",
+    "uc": "Ketupat"
+  },
+  {
+    "civ": "Bubur Ayam",
+    "uc": "Bubur Kacang Hijau"
+  },
+  {
+    "civ": "Onde-onde",
+    "uc": "Kelepon"
+  },
+  {
+    "civ": "Serabi",
+    "uc": "Pancake"
+  },
+  {
+    "civ": "Donat",
+    "uc": "Roti Bakar"
+  },
+  {
+    "civ": "Brownies",
+    "uc": "Bolu"
+  },
+  {
+    "civ": "Puding",
+    "uc": "Agar-agar"
+  },
+  {
+    "civ": "Teh Manis",
+    "uc": "Teh Tawar"
+  },
+  {
+    "civ": "Kopi Hitam",
+    "uc": "Kopi Susu"
+  },
+  {
+    "civ": "Jus Alpukat",
+    "uc": "Jus Mangga"
+  },
+  {
+    "civ": "Kucing",
+    "uc": "Anjing"
+  },
+  {
+    "civ": "Singa",
+    "uc": "Harimau"
+  },
+  {
+    "civ": "Sapi",
+    "uc": "Kambing"
+  },
+  {
+    "civ": "Ayam",
+    "uc": "Bebek"
+  },
+  {
+    "civ": "Buaya",
+    "uc": "Komodo"
+  },
+  {
+    "civ": "Ular",
+    "uc": "Cacing"
+  },
+  {
+    "civ": "Katak",
+    "uc": "Kodok"
+  },
+  {
+    "civ": "Elang",
+    "uc": "Burung Hantu"
+  },
+  {
+    "civ": "Kupu-kupu",
+    "uc": "Lebah"
+  },
+  {
+    "civ": "Nyamuk",
+    "uc": "Lalat"
+  },
+  {
+    "civ": "Semut",
+    "uc": "Rayap"
+  },
+  {
+    "civ": "Ikan",
+    "uc": "Udang"
+  },
+  {
+    "civ": "Kelinci",
+    "uc": "Marmut"
+  },
+  {
+    "civ": "Tikus",
+    "uc": "Tupai"
+  },
+  {
+    "civ": "Kuda",
+    "uc": "Keledai"
+  },
+  {
+    "civ": "Babi",
+    "uc": "Celeng"
+  },
+  {
+    "civ": "Macan",
+    "uc": "Cheetah"
+  },
+  {
+    "civ": "Gajah",
+    "uc": "Badak"
+  },
+  {
+    "civ": "Jerapah",
+    "uc": "Zebra"
+  },
+  {
+    "civ": "Monyet",
+    "uc": "Gorila"
+  },
+  {
+    "civ": "Beruang",
+    "uc": "Panda"
+  },
+  {
+    "civ": "Buaya",
+    "uc": "Biawak"
+  },
+  {
+    "civ": "Kura-kura",
+    "uc": "Penyu"
+  },
+  {
+    "civ": "Hiu",
+    "uc": "Paus"
+  },
+  {
+    "civ": "Lumba-lumba",
+    "uc": "Paus"
+  },
+  {
+    "civ": "Gurita",
+    "uc": "Cumi-cumi"
+  },
+  {
+    "civ": "Kelelawar",
+    "uc": "Burung"
+  },
+  {
+    "civ": "Angsa",
+    "uc": "Burung Unta"
+  },
+  {
+    "civ": "Merpati",
+    "uc": "Gagak"
+  },
+  {
+    "civ": "Kupu-kupu",
+    "uc": "Ngengat"
+  },
+  {
+    "civ": "Lebah",
+    "uc": "Tawon"
+  },
+  {
+    "civ": "Laba-laba",
+    "uc": "Kalajengking"
+  },
+  {
+    "civ": "Meja",
+    "uc": "Kursi"
+  },
+  {
+    "civ": "Lemari",
+    "uc": "Rak Buku"
+  },
+  {
+    "civ": "Kasur",
+    "uc": "Sofa"
+  },
+  {
+    "civ": "Bantal",
+    "uc": "Guling"
+  },
+  {
+    "civ": "Selimut",
+    "uc": "Sprei"
+  },
+  {
+    "civ": "Pintu",
+    "uc": "Jendela"
+  },
+  {
+    "civ": "Kunci",
+    "uc": "Gembok"
+  },
+  {
+    "civ": "Sapu",
+    "uc": "Pel"
+  },
+  {
+    "civ": "Ember",
+    "uc": "Gayung"
+  },
+  {
+    "civ": "Sabun Mandi",
+    "uc": "Sampo"
+  },
+  {
+    "civ": "Sikat Gigi",
+    "uc": "Pasta Gigi"
+  },
+  {
+    "civ": "Handuk",
+    "uc": "Tisu"
+  },
+  {
+    "civ": "Cermin",
+    "uc": "Kaca Jendela"
+  },
+  {
+    "civ": "Piring",
+    "uc": "Mangkok"
+  },
+  {
+    "civ": "Sendok",
+    "uc": "Garpu"
+  },
+  {
+    "civ": "Gelas",
+    "uc": "Cangkir"
+  },
+  {
+    "civ": "Pisau",
+    "uc": "Gunting"
+  },
+  {
+    "civ": "Panci",
+    "uc": "Wajan"
+  },
+  {
+    "civ": "Kompor",
+    "uc": "Oven"
+  },
+  {
+    "civ": "Rumah",
+    "uc": "Apartemen"
+  },
+  {
+    "civ": "Jam Dinding",
+    "uc": "Jam Tangan"
+  },
+  {
+    "civ": "Tas Ransel",
+    "uc": "Koper"
+  },
+  {
+    "civ": "Dompet",
+    "uc": "Tas Selempang"
+  },
+  {
+    "civ": "Payung",
+    "uc": "Jas Hujan"
+  },
+  {
+    "civ": "Sepatu",
+    "uc": "Sandal"
+  },
+  {
+    "civ": "Kaus Kaki",
+    "uc": "Sarung Tangan"
+  },
+  {
+    "civ": "Topi",
+    "uc": "Helm"
+  },
+  {
+    "civ": "Kacamata",
+    "uc": "Softlens"
+  },
+  {
+    "civ": "Buku Tulis",
+    "uc": "Majalah"
+  },
+  {
+    "civ": "Pensil",
+    "uc": "Pulpen"
+  },
+  {
+    "civ": "Penghapus",
+    "uc": "Tipe-X"
+  },
+  {
+    "civ": "Celengan",
+    "uc": "Dompet"
+  },
+  {
+    "civ": "Kalender",
+    "uc": "Jam Dinding"
+  },
+  {
+    "civ": "Bingkai Foto",
+    "uc": "Lukisan"
+  },
+  {
+    "civ": "Asbak",
+    "uc": "Tempat Sampah"
+  },
+  {
+    "civ": "Kemoceng",
+    "uc": "Sapu Lidi"
+  },
+  {
+    "civ": "Keset",
+    "uc": "Karpet"
+  },
+  {
+    "civ": "Selang Air",
+    "uc": "Gayung"
+  },
+  {
+    "civ": "Spons Cuci",
+    "uc": "Sikat"
+  },
+  {
+    "civ": "Paku",
+    "uc": "Baut"
+  },
+  {
+    "civ": "Palu",
+    "uc": "Obeng"
+  },
+  {
+    "civ": "Gergaji",
+    "uc": "Kapak"
+  },
+  {
+    "civ": "Lem",
+    "uc": "Selotip"
+  },
+  {
+    "civ": "Staples",
+    "uc": "Klip Kertas"
+  },
+  {
+    "civ": "Penggaris",
+    "uc": "Jangka"
+  },
+  {
+    "civ": "Spidol",
+    "uc": "Krayon"
+  },
+  {
+    "civ": "Kuas Cat",
+    "uc": "Rol Cat"
+  },
+  {
+    "civ": "HP",
+    "uc": "Tablet"
+  },
+  {
+    "civ": "Laptop",
+    "uc": "Komputer PC"
+  },
+  {
+    "civ": "TV",
+    "uc": "Monitor"
+  },
+  {
+    "civ": "Radio",
+    "uc": "Speaker Bluetooth"
+  },
+  {
+    "civ": "Kipas Angin",
+    "uc": "AC"
+  },
+  {
+    "civ": "Kulkas",
+    "uc": "Mesin Cuci"
+  },
+  {
+    "civ": "Setrika",
+    "uc": "Hairdryer"
+  },
+  {
+    "civ": "Kamera",
+    "uc": "CCTV"
+  },
+  {
+    "civ": "Mouse",
+    "uc": "Keyboard"
+  },
+  {
+    "civ": "Flashdisk",
+    "uc": "Hardisk Eksternal"
+  },
+  {
+    "civ": "Charger",
+    "uc": "Powerbank"
+  },
+  {
+    "civ": "Kabel USB",
+    "uc": "Colokan Listrik"
+  },
+  {
+    "civ": "Baterai",
+    "uc": "Aki Motor"
+  },
+  {
+    "civ": "Lampu Bohlam",
+    "uc": "Senter"
+  },
+  {
+    "civ": "Earphone",
+    "uc": "Headphone"
+  },
+  {
+    "civ": "Proyektor",
+    "uc": "Layar Tancap"
+  },
+  {
+    "civ": "Printer",
+    "uc": "Scanner"
+  },
+  {
+    "civ": "Mikrofon",
+    "uc": "Megafon"
+  },
+  {
+    "civ": "Smartwatch",
+    "uc": "Jam Tangan"
+  },
+  {
+    "civ": "Router WiFi",
+    "uc": "Modem"
+  },
+  {
+    "civ": "Motor",
+    "uc": "Mobil"
+  },
+  {
+    "civ": "Sepeda",
+    "uc": "Motor Listrik"
+  },
+  {
+    "civ": "Pesawat",
+    "uc": "Helikopter"
+  },
+  {
+    "civ": "Kapal Laut",
+    "uc": "Perahu Kayu"
+  },
+  {
+    "civ": "Kereta Api",
+    "uc": "Bus Trans"
+  },
+  {
+    "civ": "Truk",
+    "uc": "Mobil Box"
+  },
+  {
+    "civ": "Taksi",
+    "uc": "Angkot"
+  },
+  {
+    "civ": "Ambulans",
+    "uc": "Mobil Polisi"
+  },
+  {
+    "civ": "Traktor",
+    "uc": "Buldoser"
+  },
+  {
+    "civ": "Rakit",
+    "uc": "Perahu"
+  },
+  {
+    "civ": "Pasar",
+    "uc": "Supermarket"
+  },
+  {
+    "civ": "Sekolah",
+    "uc": "Kampus"
+  },
+  {
+    "civ": "Rumah Sakit",
+    "uc": "Puskesmas"
+  },
+  {
+    "civ": "Bioskop",
+    "uc": "Teater"
+  },
+  {
+    "civ": "Pantai",
+    "uc": "Gunung"
+  },
+  {
+    "civ": "Sungai",
+    "uc": "Danau"
+  },
+  {
+    "civ": "Hutan",
+    "uc": "Taman Kota"
+  },
+  {
+    "civ": "Bank",
+    "uc": "Mesin ATM"
+  },
+  {
+    "civ": "Hotel",
+    "uc": "Villa"
+  },
+  {
+    "civ": "Rumah",
+    "uc": "Apartemen"
+  },
+  {
+    "civ": "Kos-kosan",
+    "uc": "Rumah Kontrakan"
+  },
+  {
+    "civ": "Kantor",
+    "uc": "Pabrik"
+  },
+  {
+    "civ": "Mall",
+    "uc": "Plaza"
+  },
+  {
+    "civ": "Toko Kelontong",
+    "uc": "Warung Makan"
+  },
+  {
+    "civ": "Restoran",
+    "uc": "Kafe"
+  },
+  {
+    "civ": "Apotek",
+    "uc": "Klinik"
+  },
+  {
+    "civ": "Museum",
+    "uc": "Perpustakaan"
+  },
+  {
+    "civ": "Stasiun",
+    "uc": "Terminal Bus"
+  },
+  {
+    "civ": "Bandara",
+    "uc": "Pelabuhan"
+  },
+  {
+    "civ": "Kolam Renang",
+    "uc": "Waterboom"
+  },
+  {
+    "civ": "Masjid",
+    "uc": "Mushola"
+  },
+  {
+    "civ": "Gereja",
+    "uc": "Kuil"
+  },
+  {
+    "civ": "Penjara",
+    "uc": "Kantor Polisi"
+  },
+  {
+    "civ": "Dokter",
+    "uc": "Perawat"
+  },
+  {
+    "civ": "Indomie",
+    "uc": "Mie Sedaap"
+  },
+  {
+    "civ": "Guru",
+    "uc": "Dosen"
+  },
+  {
+    "civ": "Polisi",
+    "uc": "Tentara"
+  },
+  {
+    "civ": "Koki",
+    "uc": "Pelayan Restoran"
+  },
+  {
+    "civ": "Supir",
+    "uc": "Pilot"
+  },
+  {
+    "civ": "Penyanyi",
+    "uc": "Aktor"
+  },
+  {
+    "civ": "Petani",
+    "uc": "Nelayan"
+  },
+  {
+    "civ": "Satpam",
+    "uc": "Bodyguard"
+  },
+  {
+    "civ": "Hakim",
+    "uc": "Pengacara"
+  },
+  {
+    "civ": "Presiden",
+    "uc": "Menteri"
+  },
+  {
+    "civ": "Walikota",
+    "uc": "Bupati"
+  },
+  {
+    "civ": "Nahkoda",
+    "uc": "Masinis"
+  },
+  {
+    "civ": "Pedagang",
+    "uc": "Kasir"
+  },
+  {
+    "civ": "Montir",
+    "uc": "Tukang Kayu"
+  },
+  {
+    "civ": "Penjahit",
+    "uc": "Desainer Baju"
+  },
+  {
+    "civ": "Pramugari",
+    "uc": "Resepsionis"
+  },
+  {
+    "civ": "Tukang Cukur",
+    "uc": "Pemilik Salon"
+  },
+  {
+    "civ": "Arsitek",
+    "uc": "Insinyur"
+  },
+  {
+    "civ": "Atlet",
+    "uc": "Wasit"
+  },
+  {
+    "civ": "Pelatih",
+    "uc": "Manajer"
+  },
+  {
+    "civ": "Kemeja",
+    "uc": "Kaos"
+  },
+  {
+    "civ": "Celana",
+    "uc": "Rok"
+  },
+  {
+    "civ": "Celana Dalam",
+    "uc": "Singlet"
+  },
+  {
+    "civ": "Jaket",
+    "uc": "Sweater"
+  },
+  {
+    "civ": "Jas",
+    "uc": "Mantel Musim Dingin"
+  },
+  {
+    "civ": "Dasi",
+    "uc": "Pita Rambut"
+  },
+  {
+    "civ": "Sabuk",
+    "uc": "Ikat Pinggang"
+  },
+  {
+    "civ": "Gelang",
+    "uc": "Kalung"
+  },
+  {
+    "civ": "Cincin",
+    "uc": "Anting"
+  },
+  {
+    "civ": "Mahkota",
+    "uc": "Mutiara"
+  },
+  {
+    "civ": "Helm",
+    "uc": "Topi"
+  },
+  {
+    "civ": "Hijab",
+    "uc": "Ciput"
+  },
+  {
+    "civ": "Sarung",
+    "uc": "Mukena"
+  },
+  {
+    "civ": "Kebaya",
+    "uc": "Batik"
+  },
+  {
+    "civ": "Matahari",
+    "uc": "Bulan"
+  },
+  {
+    "civ": "Hujan",
+    "uc": "Salju"
+  },
+  {
+    "civ": "Bintang",
+    "uc": "Awan"
+  },
+  {
+    "civ": "Api",
+    "uc": "Air"
+  },
+  {
+    "civ": "Tanah",
+    "uc": "Pasir"
+  },
+  {
+    "civ": "Batu",
+    "uc": "Kerikil"
+  },
+  {
+    "civ": "Pohon",
+    "uc": "Bunga"
+  },
+  {
+    "civ": "Daun",
+    "uc": "Akar"
+  },
+  {
+    "civ": "Kayu",
+    "uc": "Bambu"
+  },
+  {
+    "civ": "Rumput",
+    "uc": "Lumut"
+  },
+  {
+    "civ": "Besi",
+    "uc": "Emas"
+  },
+  {
+    "civ": "Perak",
+    "uc": "Perunggu"
+  },
+  {
+    "civ": "Angin",
+    "uc": "Badai"
+  },
+  {
+    "civ": "Siang",
+    "uc": "Malam"
+  },
+  {
+    "civ": "Pagi",
+    "uc": "Sore"
+  },
+  {
+    "civ": "Mata",
+    "uc": "Telinga"
+  },
+  {
+    "civ": "Hidung",
+    "uc": "Mulut"
+  },
+  {
+    "civ": "Gigi",
+    "uc": "Lidah"
+  },
+  {
+    "civ": "Tangan",
+    "uc": "Kaki"
+  },
+  {
+    "civ": "Jari",
+    "uc": "Kuku"
+  },
+  {
+    "civ": "Rambut",
+    "uc": "Bulu Kuduk"
+  },
+  {
+    "civ": "Kepala",
+    "uc": "Leher"
+  },
+  {
+    "civ": "Perut",
+    "uc": "Dada"
+  },
+  {
+    "civ": "Punggung",
+    "uc": "Bahu"
+  },
+  {
+    "civ": "Lutut",
+    "uc": "Siku"
+  },
+  {
+    "civ": "Sepak Bola",
+    "uc": "Futsal"
+  },
+  {
+    "civ": "Basket",
+    "uc": "Voli"
+  },
+  {
+    "civ": "Bulu Tangkis",
+    "uc": "Tenis"
+  },
+  {
+    "civ": "Berenang",
+    "uc": "Menyelam"
+  },
+  {
+    "civ": "Berlari",
+    "uc": "Jalan"
+  },
+  {
+    "civ": "Tinju",
+    "uc": "Karate"
+  },
+  {
+    "civ": "Catur",
+    "uc": "Karambol"
+  },
+  {
+    "civ": "Memancing",
+    "uc": "Menjala Ikan"
+  },
+  {
+    "civ": "Membaca",
+    "uc": "Menulis"
+  },
+  {
+    "civ": "Menggambar",
+    "uc": "Mewarnai"
+  },
+  {
+    "civ": "Kertas",
+    "uc": "Kardus"
+  },
+  {
+    "civ": "Plastik",
+    "uc": "Karet"
+  },
+  {
+    "civ": "Kaca",
+    "uc": "Cermin"
+  },
+  {
+    "civ": "Benang",
+    "uc": "Tali Tambang"
+  },
+  {
+    "civ": "Kain",
+    "uc": "Sutra"
+  },
+  {
+    "civ": "Kapas",
+    "uc": "Busa"
+  },
+  {
+    "civ": "Asap",
+    "uc": "Debu"
+  },
+  {
+    "civ": "Bayangan",
+    "uc": "Cahaya"
+  },
+  {
+    "civ": "Tiket",
+    "uc": "Karcis"
+  },
+  {
+    "civ": "Paspor",
+    "uc": "KTP"
+  },
+  {
+    "civ": "Uang",
+    "uc": "Koin"
+  },
+  {
+    "civ": "Kartu Kredit",
+    "uc": "Cek Bank"
+  },
+  {
+    "civ": "Hadiah",
+    "uc": "Kado"
+  },
+  {
+    "civ": "Balon",
+    "uc": "Pita"
+  },
+  {
+    "civ": "Lilin",
+    "uc": "Lampu Teplok"
+  },
+  {
+    "civ": "Korek Api",
+    "uc": "Mancis"
+  },
+  {
+    "civ": "Rokok",
+    "uc": "Cerutu"
+  },
+  {
+    "civ": "Parfum",
+    "uc": "Deodoran"
+  },
+  {
+    "civ": "Kosmetik",
+    "uc": "Skincare"
+  },
+  {
+    "civ": "Lipstik",
+    "uc": "Bedak"
+  },
+  {
+    "civ": "Deterjen",
+    "uc": "Pewangi Pakaian"
+  },
+  {
+    "civ": "Gitar",
+    "uc": "Bass"
+  },
+  {
+    "civ": "Piano",
+    "uc": "Keyboard Musik"
+  },
+  {
+    "civ": "Drum",
+    "uc": "Gendang"
+  },
+  {
+    "civ": "Suling",
+    "uc": "Terompet"
+  }
+]
