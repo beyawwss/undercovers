@@ -1,6 +1,6 @@
 const { 
     Client, GatewayIntentBits, Partials, EmbedBuilder, ActionRowBuilder, 
-    ButtonBuilder, ButtonStyle, StringSelectMenuBuilder 
+    ButtonBuilder, ButtonStyle, StringSelectMenuBuilder, ModalBuilder, TextInputBuilder, TextInputStyle 
 } = require('discord.js');
 const fs = require('fs');
 
@@ -16,7 +16,6 @@ if (!fs.existsSync(WORDS_FILE)) {
         { civ: "Rumah", uc: "Apartemen" },
         { civ: "Laptop", uc: "Komputer" },
         { civ: "Gitar", uc: "Ukulele" }
-        // (Anda bisa paste ratusan kata tambahan Anda di sini nanti)
     ];
     fs.writeFileSync(WORDS_FILE, JSON.stringify(defaultWords, null, 2));
 }
@@ -92,6 +91,7 @@ client.on('messageCreate', async (message) => {
             timeout: null,
             roles: {},
             words: {},
+            clues: {}, // Menyimpan deskripsi ciri-ciri pemain
             turnIndex: 0,
             votes: {},
             afk: {}
@@ -119,7 +119,6 @@ client.on('messageCreate', async (message) => {
         const embedMsg = await message.channel.send({ embeds: [embed], components: [row] });
         game.embedMsg = embedMsg;
 
-        // Auto cancel lobby diperpanjang menjadi 30 Menit
         game.timeout = setTimeout(() => {
             if (activeGames.has(message.channel.id) && activeGames.get(message.channel.id).status === 'Lobby') {
                 activeGames.delete(message.channel.id);
@@ -128,7 +127,6 @@ client.on('messageCreate', async (message) => {
         }, 30 * 60 * 1000);
     }
 
-    // Command Lainnya: !help, !pfu, !lbu
     if (command === '!help') {
         const embed = new EmbedBuilder()
             .setTitle('🎮 PANDUAN GAME UNDERCOVER')
@@ -136,7 +134,7 @@ client.on('messageCreate', async (message) => {
             .setColor(0x5865F2)
             .setThumbnail(client.user.displayAvatarURL())
             .addFields(
-                { name: '📋 Cara Bermain', value: '1. Ketik `!undercover` untuk membuat lobby.\n2. Pemain klik **Join**.\n3. Host klik **Start**.\n4. Cek peranmu via tombol **Lihat Peranku**.\n5. Deskripsikan katamu secara bergantian.\n6. Voting untuk eliminasi Undercover.' },
+                { name: '📋 Cara Bermain', value: '1. Ketik `!undercover` untuk membuat lobby.\n2. Pemain klik **Join**.\n3. Host klik **Start**.\n4. Cek peranmu via tombol **Lihat Peranku**.\n5. Deskripsikan katamu secara bergantian lewat tombol yang disediakan.\n6. Voting untuk eliminasi Undercover.' },
                 { name: '🕵️ Peran Pemain', value: '• **Civilian**: Kata sama.\n• **Undercover**: Kata mirip.\n• **Mr. White**: Tidak ada kata.' }
             );
         return message.reply({ embeds: [embed] });
@@ -158,14 +156,13 @@ client.on('messageCreate', async (message) => {
     }
 });
 
-// --- SISTEM INTERAKSI BUTTON & VOTING (FIXED) ---
+// --- SISTEM INTERAKSI BUTTON, MODAL & VOTING ---
 client.on('interactionCreate', async (interaction) => {
     try {
-        if (!interaction.isButton() && !interaction.isStringSelectMenu()) return;
+        if (!interaction.isButton() && !interaction.isStringSelectMenu() && !interaction.isModalSubmit()) return;
         
         const game = activeGames.get(interaction.channelId);
         
-        // FIX: Kadaluarsa / Data Wipe
         if (!game) {
             return await interaction.reply({ 
                 content: '❌ Game ini sudah tidak aktif / Sesi habis (Mungkin bot habis restart). Ketik `!undercover` untuk main lagi.', 
@@ -217,13 +214,40 @@ client.on('interactionCreate', async (interaction) => {
 
                 return await interaction.reply({ content: text, ephemeral: true });
             }
+            else if (id === 'input_clue') {
+                const currentPlayer = game.players[game.turnIndex];
+                if (interaction.user.id !== currentPlayer) {
+                    return await interaction.reply({ content: `Ini bukan giliranmu! Tunggu <@${currentPlayer}>`, ephemeral: true });
+                }
+
+                // Memunculkan Popup Modal Input Ciri-Ciri
+                const modal = new ModalBuilder()
+                    .setCustomId('clue_modal')
+                    .setTitle('Deskripsi Kata Rahasia');
+
+                const clueInput = new TextInputBuilder()
+                    .setCustomId('clue_input')
+                    .setLabel('Masukkan ciri-ciri / deskripsi katamu:')
+                    .setStyle(TextInputStyle.Paragraph)
+                    .setPlaceholder('Contoh: Benda ini sering ada di dapur dan tajam...')
+                    .setRequired(true)
+                    .setMaxLength(200);
+
+                const firstActionRow = new ActionRowBuilder().addComponents(clueInput);
+                modal.addComponents(firstActionRow);
+
+                await interaction.showModal(modal);
+            }
             else if (id === 'next_turn') {
                 const currentPlayer = game.players[game.turnIndex];
                 if (interaction.user.id !== currentPlayer) {
                     return await interaction.reply({ content: `Ini bukan giliranmu! Tunggu <@${currentPlayer}>`, ephemeral: true });
                 }
                 
-                // FIX INTERACTION FAILED: Defer terlebih dahulu sebelum menjalankan fungsi besar
+                if (!game.clues[interaction.user.id]) {
+                    return await interaction.reply({ content: `Kamu belum memberikan deskripsi! Klik tombol **Isi Deskripsi** terlebih dahulu.`, ephemeral: true });
+                }
+                
                 await interaction.deferUpdate().catch(console.error); 
                 
                 clearTimeout(game.timeout);
@@ -232,9 +256,38 @@ client.on('interactionCreate', async (interaction) => {
             }
         }
 
-        // 2. HANDLER UNTUK VOTING
+        // 2. HANDLER UNTUK MODAL SUBMIT (SIMPAN CIRI-CIRI)
+        if (interaction.isModalSubmit() && interaction.customId === 'clue_modal') {
+            const currentPlayer = game.players[game.turnIndex];
+            if (interaction.user.id !== currentPlayer) {
+                return await interaction.reply({ content: 'Ini bukan giliranmu!', ephemeral: true });
+            }
+
+            const clueText = interaction.fields.getTextInputValue('clue_input');
+            game.clues[interaction.user.id] = clueText;
+
+            let orderText = game.players.map((id, idx) => `${idx === game.turnIndex ? '👉 ' : ''}${idx + 1}. <@${id}>`).join('\n');
+            
+            const embed = new EmbedBuilder()
+                .setTitle('Tahap Deskripsi')
+                .setDescription(`**Urutan Pemain:**\n${orderText}\n\nSekarang giliran: <@${currentPlayer}>\n\nDeskripsi berhasil disimpan! Klik **Next Player** untuk lanjut ke pemain berikutnya.`)
+                .setColor('Green');
+                
+            // Menampilkan seluruh ciri-ciri yang sudah terkumpul ke Embed agar bisa dilihat semua orang
+            let cluesText = Object.entries(game.clues).map(([id, clue]) => `<@${id}>: ${clue}`).join('\n');
+            embed.addFields({ name: '📝 Deskripsi Ciri-Ciri Pemain', value: cluesText });
+
+            const row = new ActionRowBuilder().addComponents(
+                new ButtonBuilder().setCustomId('input_clue').setLabel('Ubah Deskripsi').setStyle(ButtonStyle.Secondary),
+                new ButtonBuilder().setCustomId('next_turn').setLabel('Next Player').setStyle(ButtonStyle.Primary)
+            );
+
+            return await interaction.update({ embeds: [embed], components: [row] });
+        }
+
+        // 3. HANDLER UNTUK VOTING
         if (interaction.isStringSelectMenu() && interaction.customId === 'vote_menu') {
-            await interaction.deferReply({ ephemeral: true }).catch(console.error); // Defer menghindari timeout Discord
+            await interaction.deferReply({ ephemeral: true }).catch(console.error);
 
             if (!game.players.includes(interaction.user.id)) return await interaction.editReply({ content: 'Kamu tidak bermain.' });
             if (game.votes[interaction.user.id]) return await interaction.editReply({ content: 'Kamu sudah melakukan voting!' });
@@ -245,7 +298,6 @@ client.on('interactionCreate', async (interaction) => {
             game.votes[interaction.user.id] = votedFor;
             await interaction.editReply({ content: `Kamu mem-vote <@${votedFor}>.` });
 
-            // Cek jika semua sudah vote
             if (Object.keys(game.votes).length === game.players.length) {
                 clearTimeout(game.timeout);
                 await processVoteResults(game, interaction.channel);
@@ -274,13 +326,12 @@ async function updateLobbyEmbed(game, interaction) {
 
 async function startGame(game, interaction) {
     game.status = 'Playing';
+    game.clues = {}; // Reset list deskripsi saat game baru dimulai
     
-    // Shuffle Player & Pick Word
     game.players = game.players.sort(() => Math.random() - 0.5);
     const wordPair = wordsDB[Math.floor(Math.random() * wordsDB.length)];
     game.words = wordPair;
 
-    // Distribusi Role
     let ucCount = 1, mwCount = 0;
     const pCount = game.players.length;
     if (pCount >= 6 && pCount <= 8) mwCount = 1;
@@ -324,18 +375,26 @@ async function nextTurn(game, channel) {
 
     const embed = new EmbedBuilder()
         .setTitle('Tahap Deskripsi')
-        .setDescription(`**Urutan Pemain:**\n${orderText}\n\nSekarang giliran: <@${currentPlayer}>\n\nSilakan deskripsikan katamu! Jika sudah, klik *Next Player*.`)
+        .setDescription(`**Urutan Pemain:**\n${orderText}\n\nSekarang giliran: <@${currentPlayer}>\n\nSilakan klik tombol **Isi Deskripsi** untuk menyebutkan ciri-ciri katamu!`)
         .setColor('Green');
         
+    // Masukkan data ciri-ciri yang sudah terkumpul ke embed utama agar semua orang melihat
+    if (Object.keys(game.clues).length > 0) {
+        let cluesText = Object.entries(game.clues).map(([id, clue]) => `<@${id}>: ${clue}`).join('\n');
+        embed.addFields({ name: '📝 Deskripsi Ciri-Ciri Pemain', value: cluesText });
+    }
+
     const row = new ActionRowBuilder().addComponents(
-        new ButtonBuilder().setCustomId('next_turn').setLabel('Next Player').setStyle(ButtonStyle.Primary)
+        new ButtonBuilder().setCustomId('input_clue').setLabel('Isi Deskripsi').setStyle(ButtonStyle.Success),
+        new ButtonBuilder().setCustomId('next_turn').setLabel('Next Player').setStyle(ButtonStyle.Primary).setDisabled(true) // Dikunci sampai deskripsi diisi
     );
 
     await channel.send({ content: `<@${currentPlayer}>`, embeds: [embed], components: [row] });
 
-    // FIX TIME: Diperpanjang jadi 3 Menit per orang agar tidak panik
     game.timeout = setTimeout(() => {
         getUser(currentPlayer).afk_strikes++;
+        // Jika AFK/waktu habis, beri keterangan default agar game tidak stuck
+        if(!game.clues[currentPlayer]) game.clues[currentPlayer] = "*(Tidak memberikan deskripsi / Waktu habis)*";
         channel.send(`Waktu habis untuk <@${currentPlayer}>! Lanjut otomatis.`);
         game.turnIndex++;
         nextTurn(game, channel);
@@ -361,9 +420,14 @@ async function startVoting(game, channel) {
         .setDescription('Pilih siapa yang menurut kalian adalah Undercover / Mr. White.\nWaktu voting diperpanjang menjadi: **120 detik (2 Menit)**.')
         .setColor('Orange');
 
+    // Tampilkan rekap ciri-ciri terakhir sebelum voting dimulai agar mempermudah analisa pemain
+    if (Object.keys(game.clues).length > 0) {
+        let cluesText = Object.entries(game.clues).map(([id, clue]) => `<@${id}>: ${clue}`).join('\n');
+        embed.addFields({ name: '📊 Rekap Ciri-Ciri Putaran Ini', value: cluesText });
+    }
+
     await channel.send({ embeds: [embed], components: [row] });
 
-    // FIX TIME: Diperpanjang jadi 120 detik
     game.timeout = setTimeout(() => {
         processVoteResults(game, channel);
     }, 120 * 1000);
@@ -462,5 +526,4 @@ async function endGame(game, channel, winnerTeam) {
     activeGames.delete(channel.id);
 }
 
-// GANTI DENGAN TOKEN ANDA ATAU process.env.DISCORD_TOKEN jika di Railway
 client.login(process.env.DISCORD_TOKEN);
